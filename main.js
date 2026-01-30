@@ -76,3 +76,21 @@ searchForm.addEventListener('submit', async (e) => {
         }
     }
 });
+
+const themeToggle = document.getElementById('theme-toggle');
+const body = document.body;
+
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme) {
+    body.dataset.theme = savedTheme;
+}
+
+themeToggle.addEventListener('click', () => {
+    if (body.dataset.theme === 'dark') {
+        body.dataset.theme = 'light';
+        localStorage.setItem('theme', 'light');
+    } else {
+        body.dataset.theme = 'dark';
+        localStorage.setItem('theme', 'dark');
+    }
+});
