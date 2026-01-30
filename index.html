@@ -1,14 +1,36 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hello World</title>
-  <link href='/style.css' rel='stylesheet'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Word Site</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Hello, world!</h1>
-  <button onclick="console.log('hello');">Press me</button>
-  <script defer type="text/javascript" src="/main.js"></script>
+    <header>
+        <h1>English Word Site</h1>
+        <form id="search-form">
+            <input type="text" id="search-input" placeholder="Search for a word...">
+            <button type="submit">Search</button>
+        </form>
+    </header>
+    <main id="word-container"></main>
+    <template id="word-card-template">
+        <div class="card">
+            <div class="card-header">
+                <h2 class="word"></h2>
+                <button class="play-audio">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                        <path d="M8 5v14l11-7z"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="card-body">
+                <p class="pronunciation"></p>
+                <div class="definitions"></div>
+            </div>
+        </div>
+    </template>
+    <script src="main.js"></script>
 </body>
 </html>
